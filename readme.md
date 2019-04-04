@@ -34,7 +34,7 @@
 
 ## 2 引入文件
 
-    npm install https://github.com/sunxi1997/wx-choose-pay.git
+    npm install wx-choose-pay
     
 或者直接下载index.js,在自己的项目中使用script引入;
 
