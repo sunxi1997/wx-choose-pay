@@ -1,7 +1,7 @@
-/**
- * 详细用法请查看readme.md
- */
 
+/**
+ * @param payment 类型:Object
+ */
 function chooseWxPay(payment) {
     return new Promise((resolve, reject) => {
         let wx = window['wx'];
@@ -28,10 +28,10 @@ function createWxJSSDK() {
         let script = document.createElement('script')
         script.src = 'http://res.wx.qq.com/open/js/jweixin-1.4.0.js';
         script.onload = () => resolve();
+        script.onerror = () => reject();
         document.body.appendChild(script)
     })
 }
-
 
 function initWxJSSDK(config) {
     return new Promise((resolve, reject) => {
@@ -43,8 +43,10 @@ function initWxJSSDK(config) {
             })
 // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
             wx.error(function (res) {
-                reject();
+                reject(res);
             });
         })
     })
 }
+
+export {createWxJSSDK,initWxJSSDK,chooseWxPay}
