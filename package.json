@@ -1,0 +1,19 @@
+{
+  "name": "wx-choose-pay",
+  "version": "1.0.0",
+  "description": "微信支付-JS-SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunxi1997/wx-choose-pay.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sunxi1997/wx-choose-pay/issues"
+  },
+  "homepage": "https://github.com/sunxi1997/wx-choose-pay#readme"
+}
