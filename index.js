@@ -15,6 +15,7 @@ function chooseWxPay(payment) {
             reject('payment must be a object!');
             return;
         }
+        if(!payment.timestamp) payment.timestamp = payment.timeStamp;
         payment.success = resolve;
         payment.fail = reject;
         // console.log('wx chooseWxPay', payment);
