@@ -26,6 +26,8 @@ function chooseWxPay(payment) {
 
 function createWxJSSDK() {
     return new Promise((resolve, reject) => {
+       if(window['wx'])
+          return resolve();
         let script = document.createElement('script')
         script.src = 'http://res.wx.qq.com/open/js/jweixin-1.4.0.js';
         script.onload = () => resolve();
@@ -37,6 +39,13 @@ function createWxJSSDK() {
 function initWxJSSDK(config) {
     return new Promise((resolve, reject) => {
         createWxJSSDK().then(() => {
+
+           if(typeof config !== 'object')
+              return reject('config 不正确!');
+
+           let list = config.jsApiList || [];
+           list.includes('chooseWXPay') || list.push('chooseWXPay');
+
             let wx = window.wx;
             wx.config(config);
             wx.ready(function () {
