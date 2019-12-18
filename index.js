@@ -29,7 +29,7 @@ function createWxJSSDK() {
        if(window['wx'])
           return resolve();
         let script = document.createElement('script')
-        script.src = 'http://res.wx.qq.com/open/js/jweixin-1.4.0.js';
+        script.src = 'https://res.wx.qq.com/open/js/jweixin-1.4.0.js';
         script.onload = () => resolve();
         script.onerror = () => reject();
         document.body.appendChild(script)
